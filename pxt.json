@@ -1,0 +1,25 @@
+{
+    "name": "Petterson and Re6montny repairing the planet",
+    "dependencies": {
+        "device": "*",
+        "animation": "*",
+        "darts": "*",
+        "corgio": "*",
+        "color": "*",
+        "jacdac-game": "*",
+        "Color Fading": "github:jwunderl/pxt-color#v0.0.32",
+        "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.23",
+        "color-coded-tilemap": "*",
+        "sevenseg": "*"
+    },
+    "description": "",
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "preferredEditor": "blocksprj",
+    "testFiles": [
+        "test.ts"
+    ]
+}
