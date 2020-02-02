@@ -30,28 +30,24 @@ scene.onHitTile(SpriteKind.Player, 9, function (sprite) {
     music.baDing.play()
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    levels = [img`
-. . . . . . . . . f . . . . . . . . . . . . . d . . . . . d . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . d . . . . d d . . . . . . . . . . . . . . . . . . . . 
-. . . d d d . . . . . . . . . . . . . . . . . d d d . . d d . . . . . . . d d . . . . . . . d . . . 
-. . . d d d . . . . . . . . . . . . . . d . . d d d d . d d . . . . . d . d d . . . . d . . d . . . 
-. . . d d d . . . . d . . . . . . . . . d . . d d d d d d d . . . . . d d d d . . . . d d . d . . . 
-. . . d d d . . . . d d d . . . . . . d d . . d d d d d d d . . . . . d d d d . . . . d d d d . . 2 
-c . . d d d . . . . d d d . . d . . . d d . . d d d d d d d . . . . . d d d d . . . . d d d d . . . 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 . . . . . . . . . . . . . . . . . 8 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 . . . . . . . . . . . . . . . . . 8 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 . . e . . . . . . . . . . . . 4 . 8 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 . . . . . . . . . . . . . . . . . 8 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 . . . . . . . . . . . . . . . . . 8 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-`]
+    projectile2 = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Hero, 50, 0)
 })
 function EmpiezaNivel () {
     scene.setTileMap(levels[SiguienteNivel])
@@ -258,9 +254,8 @@ c c c c c c c c c c c c c c c c
 scene.onHitTile(SpriteKind.Player, 12, function (sprite) {
     scene.placeOnRandomTile(Hero, 14)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    info.changeLifeBy(-1)
-    pause(1000)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    Plastico.destroy()
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Hero.vy == 0) {
@@ -275,11 +270,17 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
         EmpiezaNivel()
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    pause(1000)
+})
 scene.onHitTile(SpriteKind.Player, 4, function (sprite) {
     scene.placeOnRandomTile(Hero, 12)
 })
+let projectile2: Sprite = null
 let levels: Image[] = []
 let SiguienteNivel = 0
+let Plastico: Sprite = null
 let Hero: Sprite = null
 scene.setBackgroundImage(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -403,7 +404,7 @@ scene.setBackgroundImage(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `)
-game.showLongText("En 2054 la tierra se contamino con mucha basura y plástico", DialogLayout.Bottom)
+game.showLongText("En 0000 la tierra se contamino con mucha basura y plástico", DialogLayout.Bottom)
 scene.setBackgroundImage(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -1041,7 +1042,7 @@ Hero = sprites.create(img`
 controller.moveSprite(Hero, 100, 0)
 Hero.ay = 350
 info.setLife(5)
-let Plastico = sprites.create(img`
+Plastico = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . f f f f f f f . . . . 
 . . . f f 2 2 2 2 2 2 2 f f . . 
@@ -1058,7 +1059,7 @@ let Plastico = sprites.create(img`
 . . f 2 2 2 2 2 2 2 2 2 2 2 f . 
 . . . f f 2 2 2 2 2 2 2 f f . . 
 . . . . . f f f f f f f . . . . 
-`, SpriteKind.Projectile)
+`, SpriteKind.Enemy)
 Plastico.vy = 350
 Plastico.setPosition(160, 104)
 Plastico.setVelocity(-100, 0)
@@ -1253,11 +1254,4 @@ f . . d d d . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 EmpiezaNivel()
 game.onUpdate(function () {
 	
-})
-forever(function () {
-    music.playMelody("D A - E B - - - ", 200)
-    music.playMelody("E A - D G - - - ", 200)
-})
-forever(function () {
-    music.playMelody("F - - - F - F - ", 200)
 })
